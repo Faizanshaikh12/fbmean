@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {tokenNotExpired}
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +56,10 @@ export class AuthService {
   loadToken(): any{
     const token = localStorage.getItem('id_token');
     this.authToken = token;
+  }
+
+  loggedIn(): boolean {
+    return !!this.authToken;
   }
 
 }
