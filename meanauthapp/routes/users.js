@@ -71,4 +71,5 @@ router.get('/profile', passport.authenticate('jwt', { session: false }), (req, r
     });
 });
 
+
 module.exports = router;
